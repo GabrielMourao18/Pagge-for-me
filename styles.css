@@ -79,6 +79,34 @@ body {
   box-sizing: border-box;
 }
 
+.light-hover {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  z-index: 1;
+}
+
+.light-hover::before {
+  content: '';
+  position: absolute;
+  top: var(--y, 50%);
+  left: var(--x, 50%);
+  transform: translate(-50%, -50%);
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(57, 159, 255, 0.829) 0%, transparent 80%);
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  opacity: 0;
+  filter: blur(20px);
+  z-index: 0;
+}
+
+.light-hover:hover::before {
+  opacity: 1;
+}
+
 .Tittle{
     position: relative;
   z-index: 2;
@@ -166,13 +194,20 @@ p {
   z-index: 2;
   min-height: 100vh;
   padding-top: 50px;
-  background: linear-gradient(#121118, #12111e);
+  padding-bottom: 50px;
   background-color: #121118;
   overflow: hidden;
+  background: rgba(18, 17, 30, 0.4); /* cor com transparência */
+  backdrop-filter: blur(12px);       /* efeito de desfoque */
+  -webkit-backdrop-filter: blur(12px); /* suporte Safari */
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3); /* profundidade sutil */
 }
 
 /* Novo estilo para o bloco de texto da seção 2 */
 .secao2-content {
+  padding: 20px;
+  background-color: #0f0d17a2;
+  border-radius: 5%;
   position: relative;
   font-family: 'Montserrat', sans-serif;
   margin-left: 45%;
@@ -281,26 +316,26 @@ p {
   position: absolute;
   font-size: 10rem;
   color: #00bcd4;
-  opacity: 70%;
+  opacity: 0.7;
   top: 50%;
   left: 200px;
   transform: translate(-50%, -50%) rotate(-20deg);
   pointer-events: none;
   user-select: none;
-  z-index: 0;
+  z-index: 2;
 }
 
 .bg-icon2{
   position: absolute;
   font-size: 3rem;
   color: #00bcd4;
-  opacity: 30%;
+  opacity: 0.3;
   top: 10%;
   left: 15%;
   transform: translate(-50%, -50%) rotate(-20deg);
   pointer-events: none;
   user-select: none;
-  z-index: 0;
+  z-index: 2;
 }
 
 /* Responsividade */
@@ -377,6 +412,7 @@ p {
     top: 150px;
     font-size: 5rem;
     left: 90%;
+    transform: translate(-50%, -50%) rotate(-20deg);
   }
 
   .Tittle{
