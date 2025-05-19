@@ -79,6 +79,15 @@ body {
   box-sizing: border-box;
 }
 
+.Tittle{
+    position: relative;
+  z-index: 2;
+  font-family: "Michroma", sans-serif;
+  left: 10%;
+  max-width: 800px;
+  box-sizing: border-box;
+}
+
 .olasou {
   font-weight: 400;
   color: transparent;
@@ -89,6 +98,15 @@ body {
 }
 
 #Nome {
+  font-weight: 600;
+  color: transparent;
+  background: linear-gradient(90deg, #00bcd4, #dd0ec1);
+  -webkit-background-clip: text;
+  background-clip: text;
+  font-size: clamp(1.3rem, 4.5vw, 2.2rem);
+}
+
+.titulo2{
   font-weight: 600;
   color: transparent;
   background: linear-gradient(90deg, #00bcd4, #dd0ec1);
@@ -162,6 +180,7 @@ p {
   max-width: 800px;
   box-sizing: border-box;
   z-index: 2;
+  box-sizing: border-box;
 }
 
 .titulo2 {
@@ -245,6 +264,19 @@ p {
   }
 }
 
+.rotacao-continuua2 {
+  animation: girar2 30s linear infinite;
+}
+
+@keyframes girar2 {
+  from {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+}
+
 .bg-icon {
   position: absolute;
   font-size: 10rem;
@@ -252,6 +284,19 @@ p {
   opacity: 70%;
   top: 50%;
   left: 200px;
+  transform: translate(-50%, -50%) rotate(-20deg);
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+}
+
+.bg-icon2{
+  position: absolute;
+  font-size: 3rem;
+  color: #00bcd4;
+  opacity: 30%;
+  top: 10%;
+  left: 15%;
   transform: translate(-50%, -50%) rotate(-20deg);
   pointer-events: none;
   user-select: none;
@@ -287,9 +332,17 @@ p {
 @media (max-width: 768px) {
   .secao2-content {
     align-items: center;
-    left: 15%;
+    left: 40%;
     padding-left: 20px;
     margin-left: 0;
+    width: 300px;
+  }
+}
+
+@media (max-width:655px){
+  .bg-icon{
+    left: 20%;
+    font-size: 8rem;
   }
 }
 
@@ -298,10 +351,8 @@ p {
     width: 300px;
   }
 
-  .secao2-content {
-    padding-left: 15%;
-    margin-left: 20px;
-    align-items: center;
+  .bg-icon{
+    font-size: 8rem;
   }
 
   .square4,
@@ -322,7 +373,47 @@ p {
     top: 150px;
   }
 
+  .bg-icon{
+    top: 150px;
+    font-size: 5rem;
+    left: 90%;
+  }
+
+  .Tittle{
+    left: 0;
+    font-size: 0.8rem;
+  }
+
+  .secao2-content{
+
+    align-items: center;
+    left: 15%;
+    padding-left: 20px;
+    margin-left: 0;
+    width: 300px;
+
+  }
+
   p {
+    font-weight: 400;
+    color: transparent;
+    background: #ffffff;
+    -webkit-background-clip: text;
+    background-clip: text;
+    font-size: 0.8;
+  }
+
+
+  .devt{
+    font-weight: 400;
+    -webkit-background-clip: text;
+    background-clip: text;
+    font-size: 0.8rem;
+  }
+
+  }
+
+  .jorn1{
     font-weight: 400;
     color: transparent;
     background: #ffffff;
@@ -337,9 +428,10 @@ p {
   }
 
   .square5 {
-    top: 50;
+    top: 50px;
+    left: 95%;
   }
-}
+
 
 @media (max-width: 375px) {
   .First-content {
